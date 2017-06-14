@@ -38,6 +38,7 @@ boolean coin_flag = false;
 
 void setup() {
   Serial.begin(9600);                   // открыть порт для связи с ПК для отладки
+  delay(500);
 
   // подтягиваем кнопки
   pinMode(button, INPUT_PULLUP);
@@ -126,6 +127,7 @@ void setup() {
 
 void loop() {
   if (sleep_flag) {  // если проснулись  после сна, инициализировать дисплей и вывести текст, сумму и валюту
+    delay(500);
     lcd.init();
     lcd.clear();
     lcd.setCursor(0, 0); lcd.print(L"На яхту");
