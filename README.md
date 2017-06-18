@@ -2,7 +2,7 @@
 
 ## Папки
 
-**LCD_1602_RUS-master** - библиотека для дисплея, установить в C:\Program Files\Arduino\libraries
+**Библиотеки** - библиотеки для дисплея и прочего, установить в C:\Program Files\Arduino\libraries
   
 **money_box_counter** - прошивка для Arduino
 
