@@ -9,7 +9,7 @@
 
 // стоимость монет, для повышения точности необходимо выбрать по 3 монетки каждого номинала,
 // максимально отличающихся друг от друга. Например блестящую, матовую и средней загрязненности
-float coin_value[coin_amount] = {0.5, 1.0, 2.0, 5.0, 10.0, 0.5, 1.0, 2.0, 5.0, 10.0, 0.5, 1.0, 2.0, 5.0, 10.0};  
+float coin_value[coin_amount] = {0.5, 1.0, 2.0, 5.0, 10.0, 0.5, 1.0, 2.0, 5.0, 10.0, 0.5, 1.0, 2.0, 5.0, 10.0};
 
 String currency = "RUB"; // валюта (английские буквы!!!)
 int stb_time = 10000;    // время бездействия, через которое система уйдёт в сон (миллисекунды)
@@ -28,7 +28,7 @@ float summ_money = 0;            // сумма монет в копилке
 //-------БИБЛИОТЕКИ---------
 
 LCD_1602_RUS lcd(0x27, 16, 2);            // создать дисплей
-boolean recogn_flag, sleep_flag = true;   // флажки
+boolean sleep_flag = true;   // флажки
 //-------КНОПКИ---------
 byte button = 2;         // кнопка "проснуться"
 byte calibr_button = 3;  // скрытая кнопка калибровкии сброса
@@ -123,9 +123,12 @@ void setup() {
   /*
     // для отладки, вывести сигналы монет в порт
     for (byte i = 0; i < coin_amount; i++) {
+      Serial.print(coin_value[i]);
+      Serial.print(": ");
       Serial.println(coin_signal[i]);
     }
   */
+
   standby_timer = millis();  // обнулить таймер ухода в сон
 }
 
@@ -134,7 +137,7 @@ void loop() {
     delay(500);
     lcd.init();
     lcd.clear();
-    lcd.setCursor(0, 0); lcd.print(L"На яхту");
+    lcd.setCursor(0, 0); lcd.print(L"На мото");
     lcd.setCursor(0, 1); lcd.print(summ_money);
     lcd.setCursor(13, 1); lcd.print(currency);
     empty_signal = analogRead(IRsens);
@@ -148,20 +151,26 @@ void loop() {
     if (sens_signal > last_sens_signal) last_sens_signal = sens_signal;
     if (sens_signal - empty_signal > 3) coin_flag = true;
     if (coin_flag && (abs(sens_signal - empty_signal)) < 2) {
-      recogn_flag = false;  // флажок ошибки, пока что не используется
-      // в общем нашли максимум для пролетевшей монетки, записали в last_sens_signal
-      // далее начинаем сравнивать со значениями для монет, хранящимися в памяти
+
+
+      // алгоритм сравнивает последовательно сигнал каждой монетки с last_sens_signal
+      // и находит монетку, наиболее подходящую под сигнал (минимально отличающуюся от last_sens_signal)
+      int delta = 1000; // для временной записи минимального значения
+      int min_i = 0; // номер минимальной монетки
       for (byte i = 0; i < coin_amount; i++) {
-        int delta = abs(last_sens_signal - coin_signal[i]);   // вот самое главное! ищем АБСОЛЮТНОЕ (то бишь по модулю) 
-        // значение разности полученного сигнала с нашими значениями из памяти
-        if (delta < 30) {   // и вот тут если эта разность попадает в диапазон, то считаем монетку распознанной
-          summ_money += coin_value[i];  // к сумме тупо прибавляем цену монетки (дада, сумма считается двумя разными способами. При старте системы суммой всех монет, а тут прибавление
-          lcd.setCursor(0, 1); lcd.print(summ_money);
-          coin_quantity[i]++;  // для распознанного номера монетки прибавляем количество
-          recogn_flag = true;
-          break;
+        if (delta > abs(last_sens_signal - coin_signal[i]) ) {
+          delta = abs(last_sens_signal - coin_signal[i]) ;
+          min_i = i;
         }
       }
+      
+      // для отладки, вывести номинал найденной монетки
+      // Serial.println(coin_value[min_i]);
+
+      summ_money += coin_value[min_i];  // к сумме тупо прибавляем цену монетки (дада, сумма считается двумя разными способами. При старте системы суммой всех монет, а тут прибавление
+      lcd.setCursor(0, 1); lcd.print(summ_money);
+      coin_quantity[min_i]++;  // для распознанного номера монетки прибавляем количество
+
       coin_flag = false;
       standby_timer = millis();  // сбросить таймер
       break;
@@ -172,8 +181,8 @@ void loop() {
       good_night();
       break;
     }
-    
-    // если монетка вставлена (замыкает контакты) и удерживается 2 секунды 
+
+    // если монетка вставлена (замыкает контакты) и удерживается 2 секунды
     while (!digitalRead(button)) {
       if (millis() - standby_timer > 2000) {
         lcd.clear();
