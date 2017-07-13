@@ -2,15 +2,29 @@
   Created 2017
   by AlexGyver
   AlexGyver Home Labs Inc.
+
+
+  Updated 
+  Zaven Bastrykin
+  2017
+
+  Структура памяти
+  i - id монетки по порядку 
+  по адресам (i * 2) хранятся значения с датчика для каждой монетки - массив coin_signal
+  по адресам (memory_offset + i * 2) хранятся количество каждой монетки - массив coin_quantity
 */
 
-//-------НАСТРОЙКИ---------
-#define coin_amount 10    // число монет, которые нужно распознать
 
+
+//-------НАСТРОЙКИ---------
+#define coin_amount 15    // число монет, которые нужно распознать
+#define memory_offset 40 // смещение необходимо для отделения значений сигналов от количества каждой монетке в общей памяти, 
+                            // оно напрямую зависит от количества элементов в массиве coin_value[], должно быть мимимум в 2 раза больше coin_amount
+                            // так как для хранения одного инта требуется 2 ячейки памяти
 // стоимость монет, для повышения точности необходимо выбрать по 3 монетки каждого номинала,
 // максимально отличающихся друг от друга. Например блестящую, матовую и средней загрязненности
-float coin_value[coin_amount] = {0.5, 1.0, 2.0, 5.0, 10.0, 0.5, 1.0, 2.0, 5.0, 10.0};
-
+float coin_value[coin_amount] = {0.5, 1.0, 2.0, 5.0, 10.0, 0.5, 1.0, 2.0, 5.0, 10.0, 0.5, 1.0, 2.0, 5.0, 10.0};
+ 
 String currency = "RUB"; // валюта (английские буквы!!!)
 int stb_time = 10000;    // время бездействия, через которое система уйдёт в сон (миллисекунды)
 //-------НАСТРОЙКИ---------
@@ -71,14 +85,14 @@ void setup() {
     lcd.clear();
     lcd.setCursor(3, 0);
     lcd.print(L"Сервис");
-    delay(500);
+    delay(100);
     reset_timer = millis();
     while (1) {                                   // бесконечный цикл
       if (millis() - reset_timer > 3000) {        // если кнопка всё ещё удерживается и прошло 3 секунды
         // очистить количество монет
         for (byte i = 0; i < coin_amount; i++) {
           coin_quantity[i] = 0;
-          EEPROM.writeInt(20 + i * 2, 0);
+          EEPROM.writeInt(memory_offset + i * 2, 0);
         }
         lcd.clear();
         lcd.setCursor(0, 0);
@@ -94,6 +108,7 @@ void setup() {
     }
     while (1) {
       for (byte i = 0; i < coin_amount; i++) {
+        lcd.setCursor(0, 1); lcd.print("        ");  // очищаем экран      
         lcd.setCursor(0, 1); lcd.print(coin_value[i]);  // отобразить цену монеты, размер которой калибруется
         lcd.setCursor(13, 1); lcd.print(currency);      // отобразить валюту
         last_sens_signal = empty_signal;
@@ -116,18 +131,18 @@ void setup() {
   // при старте системы считать из памяти сигналы монет для дальнейшей работы, а также их количество в банке
   for (byte i = 0; i < coin_amount; i++) {
     coin_signal[i] = EEPROM.readInt(i * 2);
-    coin_quantity[i] = EEPROM.readInt(20 + i * 2);
+    coin_quantity[i] = EEPROM.readInt(memory_offset + i * 2);
     summ_money += coin_quantity[i] * coin_value[i];  // ну и сумму сразу посчитать, как произведение цены монеты на количество
   }
 
-  /*
+  
     // для отладки, вывести сигналы монет в порт
     for (byte i = 0; i < coin_amount; i++) {
       Serial.print(coin_value[i]);
       Serial.print(": ");
       Serial.println(coin_signal[i]);
     }
-  */
+  
 
   standby_timer = millis();  // обнулить таймер ухода в сон
 }
@@ -164,6 +179,9 @@ void loop() {
         }
       }
       
+          lcd.setCursor(9, 0); lcd.print("      ");
+          lcd.setCursor(9, 0); lcd.print(coin_value[min_i]);
+
       // для отладки, вывести номинал найденной монетки
       // Serial.println(coin_value[min_i]);
 
@@ -201,7 +219,7 @@ void loop() {
 void good_night() {
   // перед тем как пойти спать, записываем в EEPROM новые полученные количества монет по адресам начиная с 20го (пук кек)
   for (byte i = 0; i < coin_amount; i++) {
-    EEPROM.updateInt(20 + i * 2, coin_quantity[i]);
+    EEPROM.updateInt(memory_offset + i * 2, coin_quantity[i]);
   }
   sleep_flag = true;
   // вырубить питание со всех дисплеев и датчиков
