@@ -5,7 +5,7 @@
 - **Библиотеки** - библиотеки для дисплея и прочего, скопировать в  
 `C:\Program Files (x86)\Arduino\libraries\` (Windows x64)  
 `C:\Program Files\Arduino\libraries\` (Windows x86)
-- **money_box_counter** - прошивка для Arduino
+- **money_box_counter** - прошивка для Arduino, файл в папке открыть в Arduino IDE (читай FAQ)
 
 ## Схема питания от USB
 ![СХЕМА](https://github.com/AlexGyver/MoneyBox_counter/blob/master/scheme1.jpg)
@@ -14,8 +14,9 @@
 ![СХЕМА](https://github.com/AlexGyver/MoneyBox_counter/blob/master/scheme2.jpg)
 
 ##  Материалы и компоненты
-Всё указанное ниже можно найти здесь
+Почти всё указанное ниже можно найти здесь
 http://alexgyver.ru/arduino_shop/
+или здесь http://alexgyver.ru/electronics/
 
 * Arduino NANO http://ali.pub/1qqtjx
 * Дисплей http://ali.pub/oitu5
@@ -28,10 +29,10 @@ http://alexgyver.ru/arduino_shop/
 
 ## Вам скорее всего пригодится
 * Все существующие модули и сенсоры Arduino http://alexgyver.ru/arduino_shop/
+* Электронные компоненты http://alexgyver.ru/electronics/
 * Всё для пайки http://alexgyver.ru/all-for-soldering/
 * Аккумуляторы и зарядные модули http://alexgyver.ru/18650/
 * Недорогие инструменты http://alexgyver.ru/my_instruments/
-* Электронные компоненты http://alexgyver.ru/electronics/
 
 ##  FAQ
 В: Как скачать с этого грёбаного сайта?  
@@ -68,9 +69,15 @@ http://alexgyver.ru/arduino_shop/
 В: Можно ли использовать фоторезистор?  
 О: Инфракрасный? Если найдёшь - можно
 
-## HOW TO
+## Как запустить и настроить
 * Загрузка прошивки http://alexgyver.ru/arduino-first/
 * Нажать и удерживать кнопку калибровки, затем подать питание/перезагрузить Arduino
 * Если отпустить кнопку калибровки, система перейдёт в режим калибровки
 * Если удерживать ещё 3 секунды - режим очистки памяти (сброс числа монет)
 * После окончания калибровки система сама перейдёт в обычный режим работы
+
+## Настройки в коде
+    #define coin_amount 5    // число монет, которые нужно распознать
+    float coin_value[coin_amount] = {0.5, 1.0, 2.0, 5.0, 10.0};  // стоимость монет
+    String currency = "RUB"; // валюта (английские буквы!!!)
+    int stb_time = 10000;    // время бездействия, через которое система уйдёт в сон (миллисекунды)
