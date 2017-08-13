@@ -35,33 +35,21 @@
 В: Можно ли замутить ввод суммы кнопками?
 О: Можно, замути, мне некогда  
 
+В: Можно ли использовать фоторезистор?
+О: Инфракрасный? Если найдёшь - можно
+
 ##  Материалы и компоненты
 Всё указанное ниже можно найти здесь
 http://alexgyver.ru/arduino_shop/
 
-* Arduino NANO http://ali.pub/uxbqf
+* Arduino NANO http://ali.pub/1qqtjx
 * Дисплей http://ali.pub/oitu5
 * Датчик http://ali.pub/1kamf3
 * Повышайка http://ali.pub/1ingxt
 * Кнопки и прочее http://alexgyver.ru/electronics/
-* Мосфеты
-* IRF3704ZPBF
-* IRF3205PBF
-* IRLB8743PBF
-* IRL2203NPBF
-* IRLB8748PBF
-* IRF3704PBF
-* IRL8113PBF
-* IRL3803PBF
-* IRLB3813PBF
-* IRL3502PBF
-* IRL2505PBF
-* IRF3711PBF
-* IRL3713PBF
-* IRF3709ZPBF
-* AUIRL3705N
-* IRLB3034PBF
-* IRF3711ZPBF
+* Мосфеты (список подходящих: IRF3704ZPBF, IRF3205PBF, IRLB8743PBF, IRL2203NPBF, IRLB8748PBF, IRF3704PBF, IRL8113PBF, IRL3803PBF, IRLB3813PBF, IRL3502PBF, IRL2505PBF, IRF3711PBF, IRL3713PBF, IRF3709ZPBF, AUIRL3705N, IRLB3034PBF, IRF3711ZPBF)
+* Фототранзисторы отдельные: L-7113P3C, L-53P3C
+* Светодиоды отдельные: L-7113F3C, L-53F3C
 
 ## Вам также пригодится 
 * Всё для пайки http://alexgyver.ru/all-for-soldering/
