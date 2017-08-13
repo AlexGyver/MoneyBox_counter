@@ -2,9 +2,10 @@
 
 ## Папки
 
-**Библиотеки** - библиотеки для дисплея и прочего, установить в C:\Program Files\Arduino\libraries
-  
-**money_box_counter** - прошивка для Arduino
+- **Библиотеки** - библиотеки для дисплея и прочего, скопировать в  
+`C:\Program Files (x86)\Arduino\libraries\` (Windows x64)  
+`C:\Program Files\Arduino\libraries\` (Windows x86)
+- **money_box_counter** - прошивка для Arduino
 
 ## Схема питания от USB
 ![СХЕМА](https://github.com/AlexGyver/MoneyBox_counter/blob/master/scheme1.jpg)
@@ -12,7 +13,36 @@
 ## Схема питания от аккумулятора через мосфет
 ![СХЕМА](https://github.com/AlexGyver/MoneyBox_counter/blob/master/scheme2.jpg)
 
+##  Материалы и компоненты
+Всё указанное ниже можно найти здесь
+http://alexgyver.ru/arduino_shop/
+
+* Arduino NANO http://ali.pub/1qqtjx
+* Дисплей http://ali.pub/oitu5
+* Датчик http://ali.pub/1kamf3
+* Повышайка http://ali.pub/1ingxt
+* Кнопки и прочее http://alexgyver.ru/electronics/
+* Мосфеты (список подходящих: IRF3704ZPBF, IRF3205PBF, IRLB8743PBF, IRL2203NPBF, IRLB8748PBF, IRF3704PBF, IRL8113PBF, IRL3803PBF, IRLB3813PBF, IRL3502PBF, IRL2505PBF, IRF3711PBF, IRL3713PBF, IRF3709ZPBF, AUIRL3705N, IRLB3034PBF, IRF3711ZPBF)
+* Фототранзисторы отдельные: L-7113P3C, L-53P3C
+* Светодиоды отдельные: L-7113F3C, L-53F3C
+
+## Вам скорее всего пригодится
+* Все существующие модули и сенсоры Arduino http://alexgyver.ru/arduino_shop/
+* Всё для пайки http://alexgyver.ru/all-for-soldering/
+* Аккумуляторы и зарядные модули http://alexgyver.ru/18650/
+* Недорогие инструменты http://alexgyver.ru/my_instruments/
+* Электронные компоненты http://alexgyver.ru/electronics/
+
 ##  FAQ
+В: Как скачать с этого грёбаного сайта?  
+О: На главной странице проекта (где ты читаешь этот текст) вверху справа зелёная кнопка **Clone or download**, вот её жми, там будет **Download ZIP**
+
+В: Скачался какой то файл .zip, куда его теперь?
+О: Это архив. Можно открыть стандартными средствами Windows, но думаю у всех на компьютере установлен WinRAR, архив нужно правой кнопкой и извлечь.
+
+В: Я совсем новичок! Что мне делать с Ардуиной, где взять все программы?  
+О: Читай и смотри видос http://alexgyver.ru/arduino-first/
+
 В: На дисплее ничего не отображается!  
 О: Покрути регулировку контраста сзади платы дисплея
   
@@ -37,23 +67,6 @@
   
 В: Можно ли использовать фоторезистор?  
 О: Инфракрасный? Если найдёшь - можно
-
-##  Материалы и компоненты
-Всё указанное ниже можно найти здесь
-http://alexgyver.ru/arduino_shop/
-
-* Arduino NANO http://ali.pub/1qqtjx
-* Дисплей http://ali.pub/oitu5
-* Датчик http://ali.pub/1kamf3
-* Повышайка http://ali.pub/1ingxt
-* Кнопки и прочее http://alexgyver.ru/electronics/
-* Мосфеты (список подходящих: IRF3704ZPBF, IRF3205PBF, IRLB8743PBF, IRL2203NPBF, IRLB8748PBF, IRF3704PBF, IRL8113PBF, IRL3803PBF, IRLB3813PBF, IRL3502PBF, IRL2505PBF, IRF3711PBF, IRL3713PBF, IRF3709ZPBF, AUIRL3705N, IRLB3034PBF, IRF3711ZPBF)
-* Фототранзисторы отдельные: L-7113P3C, L-53P3C
-* Светодиоды отдельные: L-7113F3C, L-53F3C
-
-## Вам также пригодится 
-* Всё для пайки http://alexgyver.ru/all-for-soldering/
-* Электронные компоненты http://alexgyver.ru/electronics/
 
 ## HOW TO
 * Загрузка прошивки http://alexgyver.ru/arduino-first/
