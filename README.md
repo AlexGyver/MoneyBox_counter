@@ -16,9 +16,7 @@ https://youtu.be/lH4qfGlK2Qk
 ![СХЕМА](https://github.com/AlexGyver/MoneyBox_counter/blob/master/scheme2.jpg)
 
 ##  Материалы и компоненты
-Почти всё указанное ниже можно найти здесь
-http://alexgyver.ru/arduino_shop/
-или здесь http://alexgyver.ru/electronics/
+Если товар закончился, то почти всё указанное ниже можно найти здесь http://alexgyver.ru/arduino_shop/ или здесь http://alexgyver.ru/electronics/
 
 * Arduino NANO http://ali.pub/1qqtjx
 * Дисплей http://ali.pub/oitu5
@@ -30,13 +28,14 @@ http://alexgyver.ru/arduino_shop/
 * Светодиоды отдельные: L-7113F3C, L-53F3C
 
 ## Вам скорее всего пригодится
+* Всё для пайки (паяльники и примочки) http://alexgyver.ru/all-for-soldering/
+* Недорогие инструменты http://alexgyver.ru/my_instruments/
 * Все существующие модули и сенсоры Arduino http://alexgyver.ru/arduino_shop/
 * Электронные компоненты http://alexgyver.ru/electronics/
-* Всё для пайки http://alexgyver.ru/all-for-soldering/
 * Аккумуляторы и зарядные модули http://alexgyver.ru/18650/
-* Недорогие инструменты http://alexgyver.ru/my_instruments/
 
 ##  FAQ
+### Основные вопросы
 В: Как скачать с этого грёбаного сайта?  
 О: На главной странице проекта (где ты читаешь этот текст) вверху справа зелёная кнопка **Clone or download**, вот её жми, там будет **Download ZIP**
 
@@ -52,15 +51,16 @@ http://alexgyver.ru/arduino_shop/
 В: Ошибка! Скетч не компилируется!  
 О: Путь к скетчу не должен содержать кириллицу. Положи его в корень диска.
 
+В: Сколько стоит?  
+О: Ничего не продаю.
+
+### Вопросы по этому проекту
 В: На дисплее ничего не отображается!  
 О: Покрути регулировку контраста сзади платы дисплея
   
 В: На дисплее вместо текста отображаются белые прямоугольники!  
 О: У твоего дисплея другой адрес, вот тут `LCD_1602_RUS lcd(0x27, 20, 4);`  
 замени 0x27 на 0x3f ( *подсказка: `LCD_1602_RUS lcd(0x3f, 20, 4);`* )
-  
-В: Сколько стоит?  
-О: Ничего не продаю
   
 В: А где ссылка на маленький дисплей?  
 О: http://alexgyver.ru/arduino_shop/  дисплей OLED
