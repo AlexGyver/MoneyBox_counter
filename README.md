@@ -49,15 +49,15 @@
 * Светодиоды отдельные: L-7113F3C, L-53F3C
 
 ## Вам скорее всего пригодится
-* Всё для пайки (паяльники и примочки) http://alexgyver.ru/all-for-soldering/
-* Недорогие инструменты http://alexgyver.ru/my_instruments/
-* Все существующие модули и сенсоры Arduino http://alexgyver.ru/arduino_shop/
-* Электронные компоненты http://alexgyver.ru/electronics/
-* Аккумуляторы и зарядные модули http://alexgyver.ru/18650/
+* [Всё для пайки (паяльники и примочки)](http://alexgyver.ru/all-for-soldering/)
+* [Недорогие инструменты](http://alexgyver.ru/my_instruments/)
+* [Все существующие модули и сенсоры Arduino](http://alexgyver.ru/arduino_shop/)
+* [Электронные компоненты](http://alexgyver.ru/electronics/)
+* [Аккумуляторы и зарядные модули](http://alexgyver.ru/18650/)
 
 <a id="chapter-4"></a>
 ## Как запустить и настроить
-* Загрузка прошивки http://alexgyver.ru/arduino-first/
+* [Загрузка прошивки] http://alexgyver.ru/arduino-first/
 * Нажать и удерживать кнопку калибровки, затем подать питание/перезагрузить Arduino
 * Если отпустить кнопку калибровки, система перейдёт в режим калибровки
 * Если удерживать ещё 3 секунды - режим очистки памяти (сброс числа монет)
