@@ -5,6 +5,7 @@
 * [Материалы и компоненты](#chapter-3)
 * [Настройка и использование](#chapter-4)
 * [FAQ](#chapter-5)
+* [Полезная информация](#chapter-6)
 
 <a id="chapter-0"></a>
 ## Описание проекта
@@ -112,3 +113,8 @@
   
 В: Можно ли использовать фоторезистор?  
 О: Инфракрасный? Если найдёшь - можно
+
+<a id="chapter-6"></a>
+## Полезная информация
+* [Мои видеоуроки по пайке](https://www.youtube.com/playlist?list=PLOT_HeyBraBuMIwfSYu7kCKXxQGsUKcqR)
+* [Мои видеоуроки по Arduino](http://alexgyver.ru/arduino_lessons/)
