@@ -1,4 +1,12 @@
 # Копилка со счётчиком монет
+* [Описание](#chapter-0)
+* [Папки](#chapter-1)
+* [Схемы](#chapter-2)
+* [Материалы и компоненты](#chapter-3)
+* [Запуск и настройка](#chapter-4)
+* [FAQ](#chapter-5)
+
+## Описание проекта <a id="chapter-0"></a>
 Электронный распознаватель монет (по размеру) для копилки со счётчиком суммы и статистикой по каждому типу монет.  
 Функционал:
 - Распознавание размера монет с высокой точностью и его привязка к стоимости каждой монеты
@@ -12,24 +20,19 @@
 - Сброс накопленного количества  
 - Подробности в видео: https://youtu.be/lH4qfGlK2Qk
 
-# Table of Contents
-  * [Chapter 1](#chapter-1)
-  * [Chapter 2](#chapter-2)
-  * [Chapter 3](#chapter-3)
-
-## Папки
+## Папки <a id="chapter-1"></a>
 - **Библиотеки** - библиотеки для дисплея и прочего, скопировать в  
 `C:\Program Files (x86)\Arduino\libraries\` (Windows x64)  
 `C:\Program Files\Arduino\libraries\` (Windows x86)
 - **money_box_counter** - прошивка для Arduino, файл в папке открыть в Arduino IDE (читай FAQ)
 
-## Схема питания от USB
+## Схема питания от USB <a id="chapter-2"></a>
 ![СХЕМА](https://github.com/AlexGyver/MoneyBox_counter/blob/master/scheme1.jpg)
 
 ## Схема питания от аккумулятора через мосфет
 ![СХЕМА](https://github.com/AlexGyver/MoneyBox_counter/blob/master/scheme2.jpg)
 
-##  Материалы и компоненты
+## Материалы и компоненты <a id="chapter-3"></a>
 Если товар закончился, то почти всё указанное ниже можно найти здесь http://alexgyver.ru/arduino_shop/ или здесь http://alexgyver.ru/electronics/
 
 * Arduino NANO http://ali.pub/1qqtjx
@@ -48,7 +51,7 @@
 * Электронные компоненты http://alexgyver.ru/electronics/
 * Аккумуляторы и зарядные модули http://alexgyver.ru/18650/
 
-## Как запустить и настроить
+## Как запустить и настроить <a id="chapter-4"></a>
 * Загрузка прошивки http://alexgyver.ru/arduino-first/
 * Нажать и удерживать кнопку калибровки, затем подать питание/перезагрузить Arduino
 * Если отпустить кнопку калибровки, система перейдёт в режим калибровки
@@ -61,7 +64,7 @@
     String currency = "RUB"; // валюта (английские буквы!!!)
     int stb_time = 10000;    // время бездействия, через которое система уйдёт в сон (миллисекунды)
 
-##  FAQ
+## FAQ <a id="chapter-5"></a>
 ### Основные вопросы
 В: Как скачать с этого грёбаного сайта?  
 О: На главной странице проекта (где ты читаешь этот текст) вверху справа зелёная кнопка **Clone or download**, вот её жми, там будет **Download ZIP**
@@ -103,14 +106,3 @@
   
 В: Можно ли использовать фоторезистор?  
 О: Инфракрасный? Если найдёшь - можно
-
-
-
-## Chapter 1 <a id="chapter-1"></a>
-Content for chapter one.
-
-## Chapter 2 <a id="chapter-2"></a>
-Content for chapter one.
-
-## Chapter 3 <a id="chapter-3"></a>
-Content for chapter one.
