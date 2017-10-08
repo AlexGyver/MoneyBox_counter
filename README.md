@@ -1,3 +1,4 @@
+[![AlexGyver YouTube](http://alexgyver.ru/git_banner.jpg)](https://www.youtube.com/channel/UCgtAOyEQdAyjvm9ATCi_Aig?sub_confirmation=1)
 # Копилка со счётчиком монет
 * [Описание проекта](#chapter-0)
 * [Папки проекта](#chapter-1)
@@ -6,6 +7,9 @@
 * [Настройка и использование](#chapter-4)
 * [FAQ](#chapter-5)
 * [Полезная информация](#chapter-6)
+* [Мой сайт](http://alexgyver.ru/)
+* [Основной YouTube канал](https://www.youtube.com/channel/UCgtAOyEQdAyjvm9ATCi_Aig?sub_confirmation=1)
+* [YouTube канал про Arduino](https://www.youtube.com/channel/UC4axiS76D784-ofoTdo5zOA?sub_confirmation=1)
 
 <a id="chapter-0"></a>
 ## Описание проекта
