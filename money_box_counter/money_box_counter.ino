@@ -5,7 +5,7 @@
 
 
   Updated 
-  Zaven Bastrykin
+  roversochi
   2017
 
   Структура памяти
