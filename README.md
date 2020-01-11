@@ -44,16 +44,23 @@
 ## Материалы и компоненты
 Если товар закончился, то почти всё указанное ниже можно найти здесь http://alexgyver.ru/arduino_shop/ или здесь http://alexgyver.ru/electronics/
 
-* Arduino NANO http://ali.pub/1qqtjx
-* Дисплей http://ali.pub/oitu5
-* Датчик http://ali.pub/1kamf3
-* Повышайка http://ali.pub/1ingxt
-* Кнопки и прочее http://alexgyver.ru/electronics/
+* Arduino NANO 328p – искать
+* https://ali.ski/tI7blh
+* https://ali.ski/O4yTxb
+* https://ali.ski/6_rFIS
+* https://ali.ski/gb92E-
+* Дисплей 1602
+* https://ali.ski/2VMIU
+* https://ali.ski/4fLT6w
+* Датчик искать
+* https://ali.ski/5zgKju
+* Повышайка https://ali.ski/NzWdL3
+* Кнопки и прочее https://alexgyver.ru/electronics/
 * Мосфеты (список подходящих: IRF3704ZPBF, IRLB8743PBF, IRL2203NPBF, IRLB8748PBF, IRF3704PBF, IRL8113PBF, IRL3803PBF, IRLB3813PBF, IRL3502PBF, IRL2505PBF, IRF3711PBF, IRL3713PBF, IRF3709ZPBF, AUIRL3705N, IRLB3034PBF, IRF3711ZPBF)
 * Фототранзисторы отдельные: L-7113P3C, L-53P3C
 * Светодиоды отдельные: L-7113F3C, L-53F3C
-* Аккумуляторы http://alexgyver.ru/18650/
-* Модуль зарядки и защиты http://ali.ski/TNzVRE
+* Аккумуляторы https://alexgyver.ru/18650/
+* Модуль зарядки и защиты https://ali.ski/pspbG
 
 ## Вам скорее всего пригодится
 * [Всё для пайки (паяльники и примочки)](http://alexgyver.ru/all-for-soldering/)
